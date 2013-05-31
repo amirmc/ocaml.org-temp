@@ -1,0 +1,32 @@
+auto: true
+
+pygments: true
+
+navigation:
+    - name: Learn
+      title: What is OCaml?
+      entries:
+          - name: Strengths
+          - name: A widely-used programming language
+          - name: Overview of OCaml lanuage and tools
+            entries:
+                - name: Safety
+                - name: Functions
+                - name: Imperative features
+                - name: Error recovery
+                - name: Data types
+                - name: Aptness to symbolic computation
+                - name: Polymorphism
+                - name: Programming in the large
+                - name: Object-oriented programming
+                - name: Automatic memory management and garbage collection
+                - name: Evaluation regime
+                - name: Efficient compiler, efficient compiled code
+                - name: Interactivity
+                - name: Debugging facilities
+                - name: Parsing
+                - name: Portability
+    - name: Documentation
+    - name: Platform
+    - name: Packages
+    - name: Community

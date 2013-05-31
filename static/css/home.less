@@ -1,0 +1,147 @@
+#home-header {
+    margin-top: -14px;
+    height: 249px;
+    background: @black url(../img/header.jpg) center top no-repeat;
+    border-bottom: 20px @grayDark solid;
+    color: @white;
+    margin-bottom: 36px;
+    .row {
+        padding-top: 50px;
+        & > div {
+            & > div {
+                background: rgba(0, 0, 0, 0.6);
+                padding: 24px;
+                border-radius: 6px;
+                a {
+                    display: block;
+                }
+            }
+        }
+    }
+    h1 {
+        font-size: 28px;
+        line-height: 40px;
+        text-shadow: rgba(0, 0, 0, 0.6) 0 0 10px;
+    }
+}
+
+@media (max-width: 979px) {
+
+    #home-header {
+        h1 {
+            font-size: 24px;
+            line-height: 36px;
+        }
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    #home-header {
+        margin-left: -20px;
+        margin-right: -20px;
+        .row {
+            padding-top: 20px;
+            & > div {
+                & > div {
+                    background: transparent;
+                    padding: 10px 20px;
+                }
+            }
+        }
+        h1 {
+            font-size: 20px;
+            line-height: 30px;
+            padding: 0 20px;
+            text-align: center;
+        }
+    }
+
+}
+
+.home-hero {
+    border-bottom: 1px #ACACAC solid;
+    margin-bottom: @baseLineHeight;
+}
+
+.home-feature {
+    position: relative;
+    margin-bottom: 24px;
+    overflow: hidden;
+    & > a {
+        float: left;
+    }
+    h1 {
+        font-size: 24px;
+        line-height: 36px;
+        margin-top: -8px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        a {
+            color: @textColor;
+            &:hover {
+                color: @linkColor;
+            }
+        }
+    }
+    h1,
+    p {
+        margin-left: 123px;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+   .home-feature {
+        & > a {
+            margin-bottom: 6px;
+        }
+        h1,
+        p {
+            margin-left: 0;
+            clear: left;
+        }
+    }
+
+}
+
+#home-learn {
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    border-top: 1px #E1E1E1 solid;
+    font-family: @sansFontFamily;
+    padding: 25px 0;
+    a {
+        color: @textColor;
+        &:hover {
+            text-decoration: none;
+            color: @linkColor;
+        }
+    }
+    img {
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+}
+
+#home-news {
+    & > h1 {
+        margin-top: -8px;
+        margin-bottom: 0;
+        position: relative;
+        a > img {
+            position: absolute;
+            top: 11px;
+            right: 0;
+        }
+    }
+    & > p {
+        font-family: @sansFontFamily;
+        margin-bottom: @baseLineHeight / 2;
+        font-weight: bold;
+    }
+}

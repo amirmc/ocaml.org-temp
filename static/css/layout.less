@@ -1,0 +1,33 @@
+body,
+input,
+textarea,
+select {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+@footerHeight: 74px;
+
+body {
+    padding-top: @navbarHeight + 14;
+    padding-bottom: @footerHeight + 14;
+}
+
+#footer {
+    background: @grayDark;
+    font-family: @sansFontFamily;
+    height: @footerHeight;
+    color: @white;
+}
+
+@media (max-width: @navbarCollapseWidth) {
+    
+    body {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+}

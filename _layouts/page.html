@@ -1,0 +1,55 @@
+---
+layout: layout
+---
+
+<div class="container">
+    <div class="row">
+
+        {% assign nav_secondary = null %}
+        {% for entry in site.navigation %}
+            {% if entry.name == page.section %}
+                {% assign nav_secondary = entry %}
+            {% endif %}
+        {% endfor %}
+
+        {% if nav_secondary.entries %}
+            <div class="span4">
+                <nav id="nav-secondary">
+                    <ul class="nav nav-list">
+                        <li class="nav-header"><a href="#">{{nav_secondary.title}}</a></li>
+                        {% for sub_entry in nav_secondary.entries %}
+                            {% if sub_entry.entries %}
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" href="#" data-target="#" data-toggle="dropdown">{{sub_entry.name}}</a>
+                                    <ul class="dropdown-menu">
+                                        {% for sub_sub_entry in sub_entry.entries %}
+                                            <li><a href="#">{{sub_sub_entry.name}}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            {% else %}
+                                <li><a href="#">{{sub_entry.name}}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        {% endif %}
+
+        <div id="content-primary" class="span8{% unless nav_secondary.entries %} offset2{% endunless %}">
+
+            <ul class="breadcrumb hidden-phone">
+                <li><a href="#">Home</a> <span class="divider"></span></li>
+                <li><a href="#">{{nav_secondary.name}}</a> <span class="divider"></span></li>
+                <li class="active">{% if page.short_title %}{{page.short_title}}{% else %}{{page.title}}{% endif %}</li>
+            </ul>
+
+            <div class="content">
+                <h1>{{page.title}}</h1>
+                {{content}}
+            </div>
+
+        </div>
+
+    </div>
+</div>

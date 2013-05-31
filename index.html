@@ -1,0 +1,121 @@
+---
+layout: layout
+title: Home
+---
+
+<header id="home-header">
+    <div class="container">
+        <div class="row">
+            <h1 class="span9">OCaml is an industrial strength programming language supporting functional, imperative and object-oriented styles</h1>
+            <div class="span3">
+                <div>
+                    <a class="btn" href="#">Download OCaml</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="row home-hero">
+
+        <div class="span8">
+            <div class="row">
+                <section class="span4 home-feature">
+                    <a href="#">
+                        <img src="static/img/learn-large.png" alt="Learn">
+                    </a>
+                    <h1><a href="#">Learn</a></h1>
+                    <p>Lorem ipsum dolor sit amet, septum consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                </section>
+                <section class="span4 home-feature">
+                    <a href="#">
+                        <img src="static/img/documentation-large.png" alt="Documentation">
+                    </a>
+                    <h1><a href="#">Documentation</a></h1>
+                    <p>Lorem ipsum dolor sit amet, septum consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                </section>
+            </div>
+            <div class="row">
+                <section class="span4 home-feature">
+                    <a href="#">
+                        <img src="static/img/platform-large.png" alt="Platform">
+                    </a>
+                    <h1><a href="#">Platform</a></h1>
+                    <p>Lorem ipsum dolor sit amet, septum consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                </section>
+                <section class="span4 home-feature">
+                    <a href="#">
+                        <img src="static/img/community-large.png" alt="Documentation">
+                    </a>
+                    <h1><a href="#">Community</a></h1>
+                    <p>Lorem ipsum dolor sit amet, septum consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+                </section>
+            </div>
+            <div id="home-learn">
+                <a href="#">
+                    <img class="hidden-phone" src="static/img/learn-ocaml.png" alt="">
+                    Learn OCaml in your browser with TryOCaml
+                </a>
+            </div>
+        </div>
+
+        <section id="home-news" class="span4 condensed">
+            <h1 class="ruled">
+                <a href="#">
+                    News
+                </a>
+                <a href="#">
+                    <img src="static/img/rss.png" alt="RSS">
+                </a>
+            </h1>
+            <ul class="news-feed">
+                <li class="announcement">
+                    <article>
+                        <h1><a href="#">OCaml Platform v0.1 available</a></h1>
+                        <p>13 March 2013</p>
+                        <a href="#">
+                            <img src="static/img/announcement.png" alt="Announcement">
+                        </a>
+                    </article>
+                </li>
+                {% for i in (1..4) %}
+                    <li>
+                        <article>
+                            <h1><a href="#">First release of PPrint</a></h1>
+                            <p>08 February 2013</p>
+                            <a href="#">
+                                <img src="static/img/news.png" alt="News">
+                            </a>
+                        </article>
+                    </li>
+                {% endfor %}
+            </ul>
+            <p><a href="#">More...</a></p>
+        </section>
+
+    </div>
+
+    <div class="row">
+        <section class="span6 condensed">
+            <h1>A taste of OCaml</h1>
+            {% highlight ocaml %}(* Binary tree with leaves carrying an integer. *)
+type tree = Leaf of int | Node of tree * tree
+
+let rec exists_leaf test tree =
+  match tree with
+  | Leaf v -> test v
+  | Node (left, right) ->
+      exists_leaf test left
+      || exists_leaf test right
+
+let has_even_leaf tree =
+  exists_leaf (fun n -> n mod 2 = 0) tree{% endhighlight %}
+        </section>
+        <section class="span6 condensed">
+            {% include packages.html %}
+        </section>
+    </div>
+
+</div>

@@ -1,0 +1,41 @@
+.news-feed {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        height: 33px;
+        padding: 15px 30px 15px 10px;
+        margin: 0;
+        border-bottom: 1px #EBEBEB solid;
+        background: url(../img/news-go.png) right center no-repeat;
+        &.announcement {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-image: url(../img/news-announcement-go.png);
+        }
+        article {
+            position: relative;            
+            h1,
+            p {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-left: 48px;
+                font-family: @sansFontFamily;
+                font-size: @baseFontSize;
+                line-height: 1.2;
+            }
+            h1 {
+                position: relative;
+                top: -1px;
+            }
+            & > a {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
